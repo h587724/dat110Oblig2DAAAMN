@@ -7,13 +7,11 @@ public class CreateTopicMsg extends Message {
 	// TODO: 
 	// Implement object variables - a topic is required
 	private String topic;
-	private String user;
 	// Constructor, get/set-methods, and toString method
     // as described in the project text	
 	
 	public CreateTopicMsg (String user, String topic) {
 		super(MessageType.CREATETOPIC, topic);
-		this.user = user;
 	}
 
 	public String getTopic() {
@@ -24,14 +22,6 @@ public class CreateTopicMsg extends Message {
 		this.topic = topic;
 	}
 	
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
 		return "[creating topic = " + topic + "]";
