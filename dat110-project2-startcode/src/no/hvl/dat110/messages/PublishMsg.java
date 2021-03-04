@@ -9,15 +9,15 @@ public class PublishMsg extends Message {
 	// TODO:
 	// Implement object variables - a topic and a message is required
 	private String topic;
-	private String mess;
-	private transient String user;
+	private String message;
+	private String user;
 	// Constructor, get/set-methods, and toString method
 	// as described in the project text
 	
 	public PublishMsg (String user, String topic, String message) {
-		super(MessageType.PUBLISH, message);
+		super(MessageType.PUBLISH, user);
 		this.topic = topic;
-		this.user = user;
+		this.message = message;
 	}
 
 	public String getUser() {
@@ -37,15 +37,15 @@ public class PublishMsg extends Message {
 	}
 
 	public String getMessage() {
-		return mess;
+		return message;
 	}
 
 	public void setMessage(String mess) {
-		this.mess = mess;
+		this.message = mess;
 	}
 	
 	@Override
 	public String toString () {
-		return "[publishing the message \"" + mess + "\" on the topic " + topic + "]";
+		return "[publishing the message \"" + message + "\" on the topic " + topic + "]";
 	}
 }

@@ -70,8 +70,8 @@ public class Storage {
 	public void createTopic(String topic) {
 
 		// TODO: create topic in the storage
-
-		subscriptions.put(topic, new HashSet<String>());
+		Set<String> set = new HashSet<>();
+		subscriptions.put(topic, set);
 	
 	}
 
@@ -88,6 +88,7 @@ public class Storage {
 		// TODO: add the user as subscriber to the topic
 		
 		if (subscriptions.containsKey(topic)) {
+			System.out.println("TOPIC " + topic);
 			Set<String> set = subscriptions.get(topic);
 			set.add(user);
 			subscriptions.put(topic, set);

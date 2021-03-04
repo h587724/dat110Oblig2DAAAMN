@@ -11,7 +11,8 @@ public class SubscribeMsg extends Message {
 	// as described in the project text
 	
 	public SubscribeMsg (String user, String topic) {
-		super(MessageType.SUBSCRIBE, topic);
+		super(MessageType.SUBSCRIBE, user);
+		this.topic = topic;
 	}
 
 	public String getTopic() {
